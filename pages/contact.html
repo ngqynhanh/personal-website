@@ -18,10 +18,7 @@
 
         <div class="contact-main" role="main">
             <section class="card" aria-label="Contact form">
-                <form class="contact-form" action="https://formsubmit.co/nguyenanh.mywork@gmail.com" method="post">
-                    <input type="hidden" name="_subject" value="New message from contact form" />
-                    <input type="hidden" name="_captcha" value="false" />
-                    <input type="hidden" name="_template" value="table" />
+                <form class="contact-form" action="/api/contact" method="post" accept-charset="UTF-8">
 
                     <div class="field">
                         <label for="name">Your name</label>
@@ -44,6 +41,8 @@
                         </svg>
                         <span>Send Message</span>
                     </button>
+
+                    <p class="form-status" aria-live="polite"></p>
                 </form>
             </section>
 
@@ -89,5 +88,43 @@
             </section>
         </div>
     </main>
+
+    <script>
+        const contactForm = document.querySelector('.contact-form');
+        const formStatus = document.querySelector('.form-status');
+
+        contactForm.addEventListener('submit', async (event) => {
+            event.preventDefault();
+            formStatus.className = 'form-status';
+            formStatus.textContent = 'Sending your message...';
+
+            const formData = new FormData(contactForm);
+            const payload = Object.fromEntries(formData.entries());
+
+            try {
+                const response = await fetch('/api/contact', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        Accept: 'application/json',
+                    },
+                    body: JSON.stringify(payload),
+                });
+
+                const result = await response.json().catch(() => ({}));
+
+                if (!response.ok) {
+                    throw new Error(result.error || 'Unable to send message');
+                }
+
+                contactForm.reset();
+                formStatus.classList.add('form-status--success');
+                formStatus.textContent = result.message || 'Thanks. Your message has been sent to my email inbox.';
+            } catch (error) {
+                formStatus.classList.add('form-status--error');
+                formStatus.textContent = error.message || 'Something went wrong while sending your message.';
+            }
+        });
+    </script>
 </body>
 </html>

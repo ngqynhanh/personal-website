@@ -3,16 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nguyễn Quỳnh Anh</title>
-    <link rel="stylesheet" href="css/navigation.css" />
-    <script src="assets/include-nav.js" defer></script>
+    <title>Home</title>
+    <link rel="stylesheet" href="css\navigation.css" />
+    <link rel="stylesheet" href="css\home.css" />
+    <script src="assets\include-nav.js" defer></script>
 </head>
 <body>
-    <div id="site-nav" data-nav-src="pages/navigation.html"></div>
+    <div id="site-nav" data-nav-src="navigation.html"></div>
+
     <main>
-        <section aria-label="Welcome section">
-            <p>Welcome to my portfolio. Please navigate using the menu above.</p>
-        </section>
+    <header class="hero">
+        <div class="hero-text">
+            <h1>Hi, I'm Quynh Anh 👋</h1>
+            <h3>Computer Science Student | AI • Computer Vision • Web Dev</h3>
+            <p>
+                I'm passionate about building intelligent systems and modern web applications. 
+                Currently exploring AI, computer vision, and fullstack development.
+            </p>
+
+            <div class="buttons">
+                <a href="pages\project.html" class="btn primary">View Projects</a>
+                <a href="pages\contact.html" class="btn secondary">Contact Me</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ABOUT SECTION -->
+    <section class="about">
+        <h2>About Me</h2>
+        <p>
+            I'm a Computer Science student at International University (VNU-HCMC) with a strong passion for AI, 
+            Machine Learning, and full-stack development. With a GPA of 3.87/4.0 and a full scholarship, I'm dedicated 
+            to building intelligent systems and modern web applications. My interests span from retrieval-augmented generation 
+            and reinforcement learning to cloud-native architecture.
+        </p>
+        <p style="margin-top: 15px;">
+            Currently, I'm researching content-aware image processing using RL and leading the academic division at Google 
+            Developers Group on Campus. I have hands-on experience building full-stack applications with Spring Boot and Next.js, 
+            and I'm deeply invested in creating solutions that make a real-world impact.
+        </p>
+    </section>
+
+    <!-- SKILLS -->
+    <section class="skills" aria-labelledby="skills-heading">
+        <h2 id="skills-heading">Technical Skills</h2>
+        <div class="skill-container" role="list">
+            <span class="skill-card" role="listitem">Python</span>
+            <span class="skill-card" role="listitem">Java</span>
+            <span class="skill-card" role="listitem">C++</span>
+            <span class="skill-card" role="listitem">TypeScript</span>
+            <span class="skill-card" role="listitem">Spring Boot</span>
+            <span class="skill-card" role="listitem">Next.js</span>
+            <span class="skill-card" role="listitem">React</span>
+            <span class="skill-card" role="listitem">TensorFlow</span>
+            <span class="skill-card" role="listitem">PyTorch</span>
+            <span class="skill-card" role="listitem">Machine Learning</span>
+            <span class="skill-card" role="listitem">Deep Learning</span>
+            <span class="skill-card" role="listitem">RAG</span>
+            <span class="skill-card" role="listitem">Computer Vision</span>
+            <span class="skill-card" role="listitem">OpenCV</span>
+            <span class="skill-card" role="listitem">SQL</span>
+            <span class="skill-card" role="listitem">Git</span>
+        </div>
+    </section>
     </main>
 </body>
 </html>
