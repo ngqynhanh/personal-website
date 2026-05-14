@@ -1,0 +1,157 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* BASE */
+body {
+    background-color: #0f172a;
+    color: #e2e8f0;
+}
+
+/* TITLE */
+.title {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.title h1 {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+.title p {
+    color: #94a3b8;
+}
+
+/* EDUCATION SECTION */
+.education-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.education-item {
+    background: #1e293b;
+    border-left: 4px solid #38bdf8;
+    border-radius: 10px;
+    padding: 30px;
+    margin-bottom: 25px;
+    transition: 0.3s;
+}
+
+.education-item:hover {
+    transform: translateX(10px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.school-name {
+    font-size: 22px;
+    font-weight: bold;
+    color: #38bdf8;
+    margin-bottom: 8px;
+}
+
+.degree {
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+.duration {
+    color: #94a3b8;
+    font-size: 14px;
+    margin-bottom: 12px;
+}
+
+.scholarship {
+    display: inline-block;
+    background: #0ea5e9;
+    color: #000;
+    padding: 4px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.gpa {
+    color: #38bdf8;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.coursework {
+    color: #cbd5f1;
+    line-height: 1.6;
+}
+
+.coursework strong {
+    color: #e2e8f0;
+}
+
+/* COURSES GRID */
+.courses-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.course-card {
+    background: #0f172a;
+    border: 1px solid #334155;
+    border-radius: 8px;
+    padding: 15px;
+    transition: 0.3s;
+}
+
+.course-card:hover {
+    border-color: #38bdf8;
+    background: #1e293b;
+}
+
+.course-name {
+    color: #38bdf8;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.course-grade {
+    color: #94a3b8;
+    font-size: 13px;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #020617;
+    margin-top: 50px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .education-container {
+        padding: 30px 15px;
+    }
+
+    .education-item {
+        padding: 20px;
+    }
+
+    .courses-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .title h1 {
+        font-size: 28px;
+    }
+
+    .title p {
+        font-size: 14px;
+    }
+}

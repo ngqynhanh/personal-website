@@ -1,0 +1,204 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* BODY */
+body {
+    background-color: #0f172a;
+    color: #e2e8f0;
+}
+
+/* NAVBAR */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 60px;
+    background: #020617;
+    position: sticky;
+    top: 0;
+}
+
+.navbar a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: #cbd5f5;
+    transition: 0.3s;
+}
+
+.navbar a:hover {
+    color: #38bdf8;
+}
+
+.logo {
+    color: #38bdf8;
+}
+
+/* HERO */
+.hero {
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    padding: 0 60px;
+}
+
+.hero-text {
+    max-width: 600px;
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 10px;
+}
+
+.hero h3 {
+    color: #38bdf8;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    margin-bottom: 25px;
+    line-height: 1.6;
+}
+
+/* BUTTONS */
+.buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.btn {
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.primary {
+    background: #38bdf8;
+    color: black;
+}
+
+.primary:hover {
+    background: #0ea5e9;
+}
+
+.secondary {
+    border: 1px solid #38bdf8;
+    color: #38bdf8;
+}
+
+.secondary:hover {
+    background: #38bdf8;
+    color: black;
+}
+
+/* ABOUT */
+.about {
+    padding: 80px 60px;
+}
+
+.about h2 {
+    margin-bottom: 20px;
+}
+
+/* SKILLS */
+.skills {
+    padding: 80px 60px;
+}
+
+.skill-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.skill-card {
+    background: #1e293b;
+    padding: 12px 20px;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.skill-card:hover {
+    background: #38bdf8;
+    color: black;
+}
+
+.about p {
+    line-height: 1.8;
+    margin-bottom: 10px;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #020617;
+    margin-top: 50px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .hero {
+        height: auto;
+        padding: 60px 30px;
+        min-height: 70vh;
+    }
+
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    .about,
+    .skills {
+        padding: 60px 30px;
+    }
+
+    .skill-container {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        padding: 40px 20px;
+    }
+
+    .hero h1 {
+        font-size: 28px;
+    }
+
+    .hero h3 {
+        font-size: 16px;
+    }
+
+    .buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    .about,
+    .skills {
+        padding: 40px 20px;
+    }
+
+    .skill-container {
+        grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+        gap: 10px;
+    }
+
+    .skill-card {
+        padding: 10px 15px;
+        font-size: 12px;
+    }
+}

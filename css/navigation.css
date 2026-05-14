@@ -1,0 +1,154 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+:root {
+  --nav-bg: rgba(31, 33, 41, 0.96);
+  --nav-border: rgba(255, 255, 255, 0.08);
+  --nav-text: #ffffff;
+  --nav-muted: rgba(255, 255, 255, 0.72);
+  --nav-hover: rgba(255, 255, 255, 0.94);
+  --nav-active: rgba(255, 255, 255, 0.16);
+  --nav-height: 54px;
+  --nav-max-width: 1100px;
+}
+
+.site-nav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: var(--nav-bg);
+  color: var(--nav-text);
+  border-bottom: 1px solid var(--nav-border);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+.site-nav .nav-inner {
+  height: var(--nav-height);
+  max-width: var(--nav-max-width);
+  margin: 0 auto;
+  padding: 0 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+}
+
+.nav-toggle {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.nav-toggle-label {
+  position: absolute;
+  right: 18px;
+  width: 44px;
+  height: 38px;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.nav-toggle-label:focus,
+.nav-toggle-label:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.nav-toggle-label .bars {
+  width: 20px;
+  height: 14px;
+  display: grid;
+  gap: 4px;
+}
+
+.nav-toggle-label .bars span {
+  height: 2px;
+  background: var(--nav-text);
+  border-radius: 999px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 26px;
+}
+
+.nav-links a {
+  color: var(--nav-muted);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 0.01em;
+  padding: 8px 12px;
+  border-radius: 999px;
+  transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.nav-links a:hover {
+  color: var(--nav-hover);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.nav-links a.is-active {
+  color: var(--nav-text);
+  background: var(--nav-active);
+}
+
+@media (max-width: 768px) {
+  .site-nav .nav-inner {
+    justify-content: flex-start;
+  }
+
+  .nav-toggle-label {
+    display: inline-flex;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: var(--nav-height);
+    left: 0;
+    right: 0;
+    background: var(--nav-bg);
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+    padding: 10px 12px 14px;
+    border-top: 1px solid var(--nav-border);
+    box-shadow: 0 18px 24px rgba(0, 0, 0, 0.24);
+  }
+
+  .nav-links li {
+    width: 100%;
+  }
+
+  .nav-links a {
+    display: block;
+    width: 100%;
+    border-radius: 12px;
+    padding: 12px 14px;
+  }
+
+  .nav-toggle:checked ~ .nav-links {
+    display: flex;
+  }
+
+  .nav-links a.is-active {
+    background: rgba(255, 255, 255, 0.12);
+  }
+}
